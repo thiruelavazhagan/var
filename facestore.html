@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Classy Register Form Responsive Widget Template :: W3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Classy Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="css/style1.css" rel="stylesheet" type="text/css" media="all">
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+<!--//online-fonts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+   <div class="header">
+	<h1>Bank Account Creation</h1>
+</div>
+<div class="w3-main">
+	<!-- Main -->
+	<div class="about-bottom main-agile book-form">
+		<div class="alert-close"> </div>
+		<h2 class="tittle">Face Dataset Collection</h2>
+		<form  name="form1" action="#" method="post">
+			<div class="form-date-w3-agileits">
+				<label> Name </label>
+				<input type="text" name="name" placeholder="Your Name" required="" id="Name">
+				<label> ID </label>
+				<input type="text" name="ID" placeholder="Id" required="" id="inputid">
+				<label> Address </label>
+				<input type="text" name="Address" placeholder="Address" required="" id="Address">
+				<label> Phone </label>
+				<input type="text" name="phone" placeholder="Phone" required="" id="phone">
+			</div>
+			<div class="make wow shake">
+				  <input type="submit" value="Face store" id="submitbutton">
+			</div>
+			</form>
+			<form  name="form1" action="#" method="post">
+			<div class="form-date-w3-agileits">
+			<div class="make wow shake">
+				<center> <input type="submit" value="Encripted" id="submitbutton1"></center> 
+			</div>
+			</div>
+			</form>
+			<form  name="form1" action="#" method="post">
+			<div class="form-date-w3-agileits">
+			<div class="make wow shake">
+				 <center> <input type="submit" value="Train" id="submitbutton2"></center> 
+			</div>
+			</div>
+		</form>
+	</div>
+	<!-- //Main -->
+</div>
+<!-- footer -->
+<div class="footer-w3l">
+<!-- 	<p>&copy; 2017 Classy Register Form. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p> -->
+</div>
+<!-- //footer -->
+<!-- js-scripts-->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script>$(document).ready(function(c) {
+		$('.alert-close').on('click', function(c){
+			$('.main-agile').fadeOut('slow', function(c){
+				$('.main-agile').remove();
+			});
+		});	  
+	});
+	</script>
+
+	<script>
+	function stringlength(inputtxt, minlength, maxlength)
+	{ 
+	var field = inputtxt.value; 
+	var mnlen = minlength;
+	var mxlen = maxlength;
+
+	if(field.length<mnlen || field.length>mxlen)
+	{ 
+	return false;
+	}
+	else
+	{ 
+	return true;
+	}
+	}
+	</script>
+	<script type="text/javascript">
+	$("#submitbutton").click(function(event) {
+	    event.preventDefault();
+				var data1= document.getElementById("Name").value;
+			    var data2= document.getElementById("inputid").value;
+			    var data3= document.getElementById("Address").value;
+			    var data4= document.getElementById("phone").value;
+			    $.ajax({
+			        type: 'POST',
+			        url: 'http://localhost:8000/app1',
+			        crossDomain: true,
+			        data: {'data':'ok','data1':data2,'data2':data1,'data3':data3,'data4':data4},
+			        dataType: 'Jason',
+			        timeout: 3000,
+			    });
+			});
+	$("#submitbutton1").click(function(event) {
+	    event.preventDefault();
+				var data1= document.getElementById("submitbutton1").value;
+				console.log(data1);
+			    $.ajax({
+			        type: 'POST',
+			        url: 'http://127.0.0.1:8000/app2',
+			        crossDomain: true,
+			        data: {'data':data1},
+			        dataType: 'Jason',
+			        timeout: 3000,
+			    });
+			});
+	$("#submitbutton2").click(function(event) {
+	    event.preventDefault();
+				var data1= document.getElementById("submitbutton2").value;
+				console.log(data1);
+			    $.ajax({
+			        type: 'POST',
+			        url: 'http://localhost:8000/app2',
+			        crossDomain: true,
+			        data: {'data':data1},
+			        dataType: 'Jason',
+			        timeout: 3000,
+			    });
+			});
+	
+			
+	</script>
+</body>
+</html>

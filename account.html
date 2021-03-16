@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Classy Register Form Responsive Widget Template :: W3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Classy Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="css/style1.css" rel="stylesheet" type="text/css" media="all">
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+<!--//online-fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBTH1y1t_7JIrib9aOJwqAhmBDsSnSmHFc",
+    authDomain: "embed-2eb80.firebaseapp.com",
+    databaseURL: "https://embed-2eb80.firebaseio.com",
+    projectId: "embed-2eb80",
+    storageBucket: "embed-2eb80.appspot.com",
+    messagingSenderId: "976193361780",
+    appId: "1:976193361780:web:455b58c2a252686a67fe21",
+    measurementId: "G-NC9FHNSX9W"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+</script>
+<style>
+img {
+  border-radius: 8px;
+}
+</style>
+</head>
+<body> 
+<div class="header">
+	<h1>Bank Account Creation</h1>
+</div>
+<div class="w3-main">
+	<!-- Main -->
+	<div class="about-bottom main-agile book-form">
+		<div class="alert-close"> </div>
+		<h2 class="tittle">User Details</h2>
+		<form  name="form1" action="#" method="post">
+			<div class="form-date-w3-agileits">
+				<label> Name </label>
+				<input type="text" name="name" placeholder="Your Name" required="" id="Name">
+				<label> Phone </label>
+				<input type="text" name="phone" placeholder="Phone" required="" id="inputphone">
+				<label> Address </label>
+				<input type="text" name="Address" placeholder="Address" required="" id="Address">
+				<input type="hidden" name="record"  id="na">
+				<img id="image" alt="Italian Trulli">
+				<input type="submit" value="Alow" onclick="allow();">
+				<input type="submit" value="Block" onclick="block();">
+				</div>
+			</form>
+	</div>
+	<!-- //Main -->
+
+<!-- footer -->
+<div class="footer-w3l">
+<!-- 	<p>&copy; 2017 Classy Register Form. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p> -->
+</div>
+<!-- //footer -->
+<!-- js-scripts-->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script>$(document).ready(function(c) {
+		$('.alert-close').on('click', function(c){
+			$('.main-agile').fadeOut('slow', function(c){
+				$('.main-agile').remove();
+			});
+		});	  
+	});
+	</script>
+<!-- //js-scripts-->
+	<script>
+		function block() {
+			var name = document.getElementById("Name").value;
+			var phone = document.getElementById("inputphone").value;
+			var address = document.getElementById("Address").value;
+			var photo = document.getElementById("na").value;
+			console.log(name);
+			console.log(address);
+			console.log(phone);
+			console.log(photo);
+			var postData = {
+				Name : name,
+				Address : address,
+				Photo : photo,
+				Phone : phone,
+			};
+			var postData1 = {
+					Name : "0",
+					Address : "0",
+					Photo : "0",
+					Phone : "0",
+				};
+			var postData2 = {
+					Status:"2",	
+				};
+			
+ 			if(name != "0"){
+			console.log(postData);
+			firebase.database().ref().child('/Block/' + name).update(
+					postData);
+ 			}
+			firebase.database().ref().child("/sharing/data/").update(
+					postData1);
+			firebase.database().ref().child("/sharing/").update(
+					postData2);
+ 			
+			}
+// 			location.reload();
+			function allow(){
+				var postData1 = {
+						Status:"1",
+					};
+				var postData2 = {
+						Name : "0",
+						Address : "0",
+						Photo : "0",
+						Phone : "0",
+					};
+				firebase.database().ref().child("/sharing/").update(
+						postData1);
+				firebase.database().ref().child("/sharing/data/").update(
+						postData2);
+			}
+	    </script>
+	    <script>
+		function finger() {
+			firebase.database().ref('/sharing/data/').once('value').then(
+					function(snapshot) {
+						var bio1 = snapshot.val().Name;
+						var bio2 = snapshot.val().Phone;
+						var bio3 = snapshot.val().Address;
+						var bio4 = snapshot.val().Photo;
+						var bio5 = "data:image/gif;base64,"+bio4;
+						var baseStr64=bio4;
+						Name.setAttribute('value', bio1);
+						inputphone.setAttribute('value', bio2);
+						Address.setAttribute('value', bio3);
+						na.setAttribute('value', bio4);
+						image.setAttribute('src', "data:image/jpg;base64," + baseStr64);
+					});
+		}
+		finger();
+	</script>
+	
+	<script>
+	function stringlength(inputtxt, minlength, maxlength)
+	{ 
+	var field = inputtxt.value; 
+	var mnlen = minlength;
+	var mxlen = maxlength;
+
+	if(field.length<mnlen || field.length>mxlen)
+	{ 
+	return false;
+	}
+	else
+	{ 
+	return true;
+	}
+	}
+	</script>
+</body>
+</html>
